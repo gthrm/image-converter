@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Image Converter</title>
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <h1>Image Converter</h1>
+    <form method="post" enctype="multipart/form-data" action="/upload">
+      <label for="file" class="fileinput"
+        >Drag and drop a file or press to this area</label
+      >
+      <input id="file" type="file" name="upload" />
+
+      <div>
+        <div>
+          <input id="webp" type="radio" name="imageType" value="webp" checked />
+          <label for="webp">webp</label>
+        </div>
+        <div>
+          <input id="avif" type="radio" name="imageType" value="avif" />
+          <label for="avif">avif</label>
+        </div>
+        <div>
+          <input id="jpeg" type="radio" name="imageType" value="jpeg" />
+          <label for="jpeg">jpeg</label>
+        </div>
+      </div>
+      <div><input type="submit" class="button" /></div>
+    </form>
+  </body>
+</html>

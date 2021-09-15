@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 1rem 1.5rem;
+  font-family: system-ui, sans-serif;
+  display: grid;
+  grid-template-columns: 1fr;
+  font-size: 1.5rem;
+}
+
+form {
+  width: 100%;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+p {
+  font-weight: 300;
+}
+
+div {
+  padding: 0.5rem;
+}
+
+input[type="file"] {
+  font-size: 1rem;
+  color: aquamarine;
+}
+
+input[type="submit"] {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  background-color: aquamarine;
+  border-color: rgb(70, 139, 116);
+  color: rgb(70, 139, 116);
+  font-size: 1rem;
+}
+
+label {
+  text-transform: uppercase;
+}
+
+.fileinput {
+  display: block;
+  min-height: 6rem;
+  border-width: 0.3rem;
+  border-color: aquamarine;
+  color: aquamarine;
+  padding: 1.5rem;
+  border-style: dotted;
+  text-align: center;
+}
