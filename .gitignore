@@ -126,3 +126,4 @@ dist
 # Other
 data/*
 uploads/*
+.DS_Store
