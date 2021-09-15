@@ -1,7 +1,7 @@
 {
-  "name": "untitled-folder-2",
+  "name": "image-converter",
   "version": "1.0.0",
-  "description": "",
+  "description": "Convert image from any to webp, avif, jpeg",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
