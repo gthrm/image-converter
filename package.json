@@ -9,7 +9,7 @@
     "convert": "node app.js"
   },
   "type": "commonjs",
-  "author": "",
+  "author": "cdROma",
   "license": "ISC",
   "dependencies": {
     "express": "4.17.1",
