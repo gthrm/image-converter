@@ -1,18 +1,20 @@
 // use for CLI
-const fs = require("fs");
-const { convertToType } = require("./utils/convert.utils");
+const fs = require('fs');
+const { convertToType } = require('./utils/convert.utils');
+const { logger } = require('./utils/logger.utils');
 
-const DIR = "./data"; // input dir for images
-const PREW_OPT = { height: 480, width: 640 };
+const DIR = './data'; // input dir for images
 
-fs.readdir(DIR, (err, files) => {
+fs.readdir(DIR, async (err, files) => {
   if (err) {
-    console.error(err);
+    logger.error(err);
+    throw new Error(err);
   }
-  files.forEach(async (file) => {
+
+  for await (const file of files) {
     const path = `${DIR}/${file}`;
-    await convertToType(path, "webp");
-    await convertToType(path, "avif");
-    await convertToType(path, "jpg", PREW_OPT);
-  });
+    await convertToType(path, 'webp');
+    await convertToType(path, 'avif');
+    await convertToType(path, 'jpg');
+  }
 });
