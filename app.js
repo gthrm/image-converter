@@ -2,6 +2,7 @@
 const fs = require('fs');
 const { convertToType } = require('./utils/convert.utils');
 const { logger } = require('./utils/logger.utils');
+require('dotenv').config();
 
 const DIR = './data'; // input dir for images
 

@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const { convertToType } = require('./utils/convert.utils');
 const { logger } = require('./utils/logger.utils');
+require('dotenv').config();
 
 const PORT = process.env.PORT || 3000;
 
@@ -37,9 +38,10 @@ app.post('/upload', (request, response) => {
 });
 
 const server = app.listen(PORT, () => {
+  const devText = process.env.NODE_ENV !== 'production' ? 'Open chrome://inspect to debug' : '';
   logger.info(
     `Server listening on http://localhost:${
       server.address().port
-    }. Open chrome://inspect to debug`,
+    }.${devText}`,
   );
 });

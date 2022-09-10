@@ -1,6 +1,7 @@
 const sharp = require('sharp');
 const { v4: uuidv4 } = require('uuid');
 const { logger } = require('./logger.utils');
+require('dotenv').config();
 
 const PRED_OPT = 480;
 /**
