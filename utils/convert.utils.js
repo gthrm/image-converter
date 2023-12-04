@@ -3,7 +3,7 @@ const { v4: uuidv4 } = require('uuid');
 const { logger } = require('./logger.utils');
 require('dotenv').config();
 
-const PRED_OPT = 480;
+const PRED_OPT = 1920;
 /**
  * convertToType
  * @param {*} image - image

@@ -35,6 +35,8 @@ div {
 input[type="file"] {
   font-size: 1rem;
   color: aquamarine;
+  position: absolute;
+  inset: 0 0 0 0;
 }
 
 input[type="submit"] {
@@ -52,6 +54,7 @@ label {
 }
 
 .fileinput {
+  position: relative;
   display: block;
   min-height: 6rem;
   border-width: 0.3rem;
