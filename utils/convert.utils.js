@@ -3,25 +3,32 @@ const { v4: uuidv4 } = require('uuid');
 const { logger } = require('./logger.utils');
 require('dotenv').config();
 
-const PRED_OPT = 1920;
+const sizeOptions = {
+  full: null, // Original size
+  medium: 1200, // Medium size
+  small: 800, // Small size
+  thumbnail: 400, // Thumbnail size
+};
+
 /**
  * convertToType
  * @param {*} image - image
  * @param {'avif' | 'webp' | 'jpeg'} type - output type
  * @param {object} resizeOptions - resizeOptions
  */
-async function convertToType(imagePath, type = 'webp', resizeOptions = PRED_OPT) {
+async function convertToType(imagePath, type = 'webp', imageSize = 'full') {
   if (!imagePath) {
     throw new Error('imagePath is not defined');
   }
   const [dir] = imagePath.split('/');
   const imageId = uuidv4();
   const filePath = `${dir}/${imageId}.${type}`;
+  const resizeOption = sizeOptions[imageSize];
   switch (type) {
     case 'webp':
       return new Promise((resolve, reject) => sharp(imagePath)
         .webp()
-        .resize(resizeOptions)
+        .resize(resizeOption)
         .toFile(`${dir}/${imageId}.${type}`, (err, info) => {
           if (err) {
             logger.error(err);
@@ -33,7 +40,7 @@ async function convertToType(imagePath, type = 'webp', resizeOptions = PRED_OPT)
     case 'avif':
       return new Promise((resolve, reject) => sharp(imagePath)
         .avif()
-        .resize(resizeOptions)
+        .resize(resizeOption)
         .toFile(`${dir}/${imageId}.${type}`, (err, info) => {
           if (err) {
             logger.error(err);
@@ -45,7 +52,7 @@ async function convertToType(imagePath, type = 'webp', resizeOptions = PRED_OPT)
     case 'jpeg':
       return new Promise((resolve, reject) => sharp(imagePath)
         .jpeg()
-        .resize(resizeOptions)
+        .resize(resizeOption)
         .toFile(`${dir}/${imageId}.${type}`, (err, info) => {
           if (err) {
             logger.error(err);

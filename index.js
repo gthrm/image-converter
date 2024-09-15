@@ -25,8 +25,8 @@ app.post('/upload', (request, response) => {
       logger.error(error);
       return response.send(error);
     }
-    const { imageType } = request.body;
-    return convertToType(request?.file?.path, imageType)
+    const { imageType, imageSize } = request.body;
+    return convertToType(request?.file?.path, imageType, imageSize)
       .then(({ filePath }) => {
         fs.unlink(request.file.path, () => response.sendFile(path.join(__dirname, filePath)));
       })
@@ -42,6 +42,6 @@ const server = app.listen(PORT, () => {
   logger.info(
     `Server listening on http://localhost:${
       server.address().port
-    }.${devText}`,
+    }. ${devText}`,
   );
 });

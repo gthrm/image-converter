@@ -13,9 +13,9 @@
 <body>
   <h1>Image Converter</h1>
   <form method="post" enctype="multipart/form-data" action="/upload">
-    <label for="file" class="fileinput">Drag and drop a file or press to this area
-      <input id="file" type="file" name="upload" />
-    </label>
+    <label for="file" class="fileinput">Drag and drop a file or press to this area</label>
+    <input id="file" type="file" name="upload" />
+
     <div>
       <div>
         <input id="webp" type="radio" name="imageType" value="webp" checked />
@@ -30,7 +30,26 @@
         <label for="jpeg">jpeg</label>
       </div>
     </div>
+    <div>
+      <div>
+        <input id="full" type="radio" name="imageSize" value="full" checked />
+        <label for="full">Full Size</label>
+      </div>
+      <div>
+        <input id="medium" type="radio" name="imageSize" value="medium" />
+        <label for="medium">Medium Size</label>
+      </div>
+      <div>
+        <input id="small" type="radio" name="imageSize" value="small" />
+        <label for="small">Small Size</label>
+      </div>
+      <div>
+        <input id="thumbnail" type="radio" name="imageSize" value="thumbnail" />
+        <label for="thumbnail">Thumbnail</label>
+      </div>
+    </div>
     <div><input type="submit" class="button" /></div>
+
   </form>
 </body>
 

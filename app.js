@@ -16,6 +16,6 @@ fs.readdir(DIR, async (err, files) => {
     const path = `${DIR}/${file}`;
     await convertToType(path, 'webp');
     await convertToType(path, 'avif');
-    await convertToType(path, 'jpg');
+    await convertToType(path, 'jpeg');
   }
 });
