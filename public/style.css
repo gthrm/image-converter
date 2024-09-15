@@ -37,6 +37,7 @@ input[type="file"] {
   color: aquamarine;
   position: absolute;
   inset: 0 0 0 0;
+  visibility: hidden;
 }
 
 input[type="submit"] {
